@@ -2,7 +2,7 @@ import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
-app = Flask(_name_)
+app = Flask(__name__)
 CORS(app)
 
 @app.route('/')
@@ -24,6 +24,6 @@ def simplificar():
         "recomendacao_fiscalizacao": "Verifique o número do processo, as datas de publicação no Diário Oficial e se o valor total está de acordo com o orçamento previsto."
     })
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     port = int(os.environ.get('PORT', 10000))
     app.run(host='0.0.0.0', port=port)
